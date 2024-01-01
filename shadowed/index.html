@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>404</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&family=Questrial&display=swap" rel="stylesheet"><script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          secondary: "#DFDFDF",
+          dark: {
+            DEFAULT: "rgb(28,28,28)",
+            100: "rgb(28,28,28,0.1)",
+            200: "rgb(28,28,28,0.2)",
+            300: "rgb(28,28,28,0.3)",
+            400: "rgb(28,28,28,0.4)",
+            500: "rgb(28,28,28,0.5)",
+            600: "rgb(28,28,28,0.6)",
+            700: "rgb(28,28,28,0.7)",
+            800: "rgb(28,28,28,0.8)",
+            900: "rgb(28,28,28,0.9)",
+          },
+          black: "#242424",
+        },
+        fontFamily: {
+          cabin: ["Cabin", "sans-serif"],
+          questrial: ["Questrial", "sans-serif"],
+        },
+      },
+    },
+  };
+
+  </script>
+</head>
+
+<body>
+    <div class="min-h-screen bg-[#ffffec] flex justify-center items-center">
+        <div class="flex flex-col items-center">
+            <div class="relative before:content-[''] before:absolute before:left-[calc(50%-10px)] before:top-[calc(50%-10px)]  before:rounded-full before:animate-ping before:w-[20px] before:h-[20px] before:bg-dark after:content-[''] after:absolute after:left-[calc(50%-10px)] after:top-[calc(50%-10px)]  after:rounded-full after:w-[20px] after:h-[20px] after:bg-dark ">
+                <h4 class="font-cabin font-bold text-[min(200px,30vw)] text-dark relative z-[1] leading-[normal]">404</h4>
+            </div>
+            <p class="text-[min(50px,10vw)] text-center font-questrial">Page not found</p>
+            <button class="group relative text-base border border-dark h-[40px] px-[30px] rounded-full transition-all duration-200 ease-linear hover:scale-110 origin-top hover:bg-dark hover:text-[#ffffec] ">
+                <span class="transition-all duration-200 ease-linear opacity-1 hover:opacity-0 hover:translate-x-[10px]">Back to home</span>
+                <!-- <span class="absolute top-[50%] left-[50%] transition-all duration-200 ease-linear opacity-0 hover:opacity-1 translate-x-[-10px] hover:translate-x-0">Back to home</span> -->
+            </button>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -14,21 +14,25 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            primary: "#DE623A",
-            secondary: "#DFDFDF",
-            dark: "#1C1C1C",
-            black: "#242424",
+    theme: {
+      extend: {
+        colors: {
+          primary: "#DE623A",
+          secondary: "#DFDFDF",
+          dark: {
+            DEFAULT: "#1C1C1C",
+            500: "rgb(28,28,28,0.5)",
+            900: "rgb(28,28,28,0.9)",
           },
-          fontFamily: {
-            montserrat: ["Montserrat", "sans-serif"],
-            anton: ["Anton", "sans-serif"],
-          },
+          black: "#242424",
+        },
+        fontFamily: {
+          montserrat: ["Montserrat", "sans-serif"],
+          anton: ["Anton", "sans-serif"],
         },
       },
-    };
+    },
+  };
 
   </script>
 </head>
@@ -38,26 +42,34 @@
     <img src="./images/shape1.png" class="z-[0] top-0 right-0 w-full opacity-0 md:opacity-100 absolute max-w-[50vh] md:max-w-[60vh] lg:max-w-[80vh] xl:max-w-[100vh] select-none" alt="shape1">
     <img src="./images/shape2.png" class="z-[0]  opacity-0 md:opacity-100 absolute bottom-0 left-0 w-full  max-w-[40vh] md:max-w-[50vh] lg:max-w-[65vh] xl:max-w-[70vh] select-none" alt="shape2">
     <!-- header -->
-    <nav class="z-10 fixed w-full px-[16px] md:px-[30px] lg:px-[42px] left-0 top-[22px] selection:bg-primary selection:text-secondary">
+    <nav class="group z-10 fixed w-full px-[16px] md:px-[30px] lg:px-[42px] left-0 top-[22px] selection:bg-primary selection:text-secondary">
       <div class="flex justify-between items-center max-w-[1200px] m-auto">
         <div class="logo">
           <img src="./images/LOGO.png" class="max-w-[152px] select-none" alt="SKATESITE">
         </div>
-        <div class="links hidden md:block">
-          <ul class="flex gap-[20px]">
-            <li>
+        <div>
+          <input type="checkbox" name="menuopen" class="peer absolute w-0 h-0" id="menuopen">
+          <label for="menuopen" class="burger-menu relative z-[1001] flex flex-col gap-2 md:hidden">
+            <span class="transition-all duration-300 ease-linear bg-white block w-[30px] h-[2px] bg-dark-900 group-has-[:checked]:rotate-45 group-has-[:checked]:origin-top-left"></span>
+            <span class="transition-all duration-300 ease-linear bg-white block w-[30px] h-[2px] bg-dark-900 group-has-[:checked]:w-0"></span>
+            <span class="transition-all duration-300 ease-linear bg-white block w-[30px] h-[2px] bg-dark-900 group-has-[:checked]:rotate-[-45deg] group-has-[:checked]:origin-bottom-left"></span>
+          </label>
+        </div>
+        <div class="links max-md:fixed max-md:z-[1000] max-md:flex max-md:opacity-0 max-md:translate-y-8 max-md:invisible group-has-[:checked]:translate-y-0 group-has-[:checked]:visible group-has-[:checked]:opacity-100 max-md:justify-center max-md:items-center max-md:min-h-screen max-md:w-screen max-md:top-0 max-md:left-0 max-md:bg-dark-900 text-dark md:static transition-all duration-200 ease-linear">
+          <ul class="flex gap-[20px] max-md:flex-col max-md:items-center">
+            <li class="relative before:content:[''] before:h-[1px] before:w-0 before:transition-all before:duration-200 before:ease-in hover:before:w-[100%] before:bg-white before:absolute before:bottom-0 before:left-0">
               <a href="javascript:;"
                 class="inline-block uppercase text-[#DFDFDF] text-[14px] font-normal leading-[normal]">Home</a>
             </li>
-            <li>
+            <li class="relative before:content:[''] before:h-[1px] before:w-0 before:transition-all before:duration-200 before:ease-in hover:before:w-[100%] before:bg-white before:absolute before:bottom-0 before:left-0">
               <a href="javascript:;"
                 class="inline-block uppercase text-[#DFDFDF] text-[14px] font-normal leading-[normal]">About Us</a>
             </li>
-            <li>
+            <li class="relative before:content:[''] before:h-[1px] before:w-0 before:transition-all before:duration-200 before:ease-in hover:before:w-[100%] before:bg-white before:absolute before:bottom-0 before:left-0">
               <a href="javascript:;"
                 class="inline-block uppercase text-[#DFDFDF] text-[14px] font-normal leading-[normal]">Our Event</a>
             </li>
-            <li>
+            <li class="relative before:content:[''] before:h-[1px] before:w-0 before:transition-all before:duration-200 before:ease-in hover:before:w-[100%] before:bg-white before:absolute before:bottom-0 before:left-0">
               <a href="javascript:;"
                 class="inline-block uppercase text-[#DFDFDF] text-[14px] font-normal leading-[normal]">Sponsors</a>
             </li>
@@ -67,7 +79,7 @@
     </nav>
     <!-- header -->
 
-    <div class="main text-[#DFDFDF] w-full relative z-10 flex flex-col items-center max-w-[1200px]  selection:bg-primary selection:text-secondary">
+    <div class="main text-[#DFDFDF] w-full relative z-[5] flex flex-col items-center max-w-[1200px]  selection:bg-primary selection:text-secondary">
       <div class="min-w-[200px] sm:min-w-[300px] md:min-w-[340px] lg:min-w-[400px] xl:min-w-[470px] flex justify-between m-auto">
         <span class="font-anton text-[100px] sm:text-[160px] md:text-[200px] lg:text-[240px] xl:text-[270px] font-normal leading-[normal] shrink-0 inline-block">4</span>
         <img src="./images/skate.png" alt="skate"
@@ -81,7 +93,7 @@
       </div>
     </div>
 
-    <footer class="z-10 fixed w-full px-[16px] md:px-[30px] lg:px-[42px] left-0 bottom-[22px]  selection:bg-primary selection:text-secondary">
+    <footer class="z-[5] fixed w-full px-[16px] md:px-[30px] lg:px-[42px] left-0 bottom-[22px]  selection:bg-primary selection:text-secondary">
       <div class="flex justify-between items-center max-w-[1200px] m-auto md:pl-3">
         <ul class="flex gap-2 select-none">
           <li class="transition-all duration-200 ease-linear hover:scale-[1.14]">
